@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('PressStart2P-Regular.ttf') format('truetype');
+}
+
+body {
+    background-image: url('starter_background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Press Start 2P', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    /*Reminder to adjust the transform timer to either 0.5 or 0.7, right now the animation looks ugly at 0.1*/
+    transition: transform 0.5s;
+}
+
+/* Start of flip animation css for the cards */
+.front {
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flip .front {
+    transform: rotateY(180deg);
+}
+
+.flip .back {
+    transform: rotateY(0deg);
+}
+/* End of flip animation css for the cards */
+
+#timer {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.my-buttons {  
+    text-align: center;
+    margin: 20px 0;
+}
+
+.my-buttons button { 
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f44336;
+    color: rgb(27, 27, 27);
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+.my-buttons button:hover { 
+    background-color: #d32f2f;
+}
+
+#reset-button {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: rgb(27, 27, 27);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#reset-button:hover {
+    background-color: #d32f2f;
+}
+
+

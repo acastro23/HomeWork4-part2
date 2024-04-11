@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Match Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="intro">
+        <h1>PokeMatch</h1>
+        <p>Welcome to the PokeMatch! A fun memory game that test your memory!</p>
+        <h2>How to Play</h2>
+        <ul>
+            <li>Please Select one of the options below, we have 8 10, or 12 cards.</li>
+            <li>When you start, you will be shown all the card locations for a few seconds, and you must memorize them.</li>
+            <li>After those few seconds, the cards will flip and it is your job to match each pair.</li>
+            <li>Match all pairs before the timer runs out to win! Good Luck, and go match em all!!</li>
+        </ul>
+        <p>*Disclaimer* You will only see Gen 1 pokemon here so sorry not sorry. *Disclaimer*</p>
+        <h2>Select Number of Cards</h2>
+        <div class="my-buttons">
+            <button onclick="selectCards(8)">8 Cards</button>
+            <button onclick="selectCards(10)">10 Cards</button>
+            <button onclick="selectCards(12)">12 Cards</button>
+        </div>
+    </div>
+
+    <div id="difficulty-selection" style="display: none;">
+        <h2>Select Difficulty Level</h2>
+        <div class="my-buttons">
+            <button onclick="selectDifficulty('easy')">Easy (8 seconds)</button>
+            <button onclick="selectDifficulty('medium')">Medium (5 seconds)</button>
+            <button onclick="selectDifficulty('hard')">Hard (3 seconds)</button>
+        </div>
+    </div>
+
+    <div id="gameStuff" style="display: none;">
+        <div id="timer">02:00</div>
+        <div id="board"></div>
+        <button id="reset-button" onclick="resetGame()">Back to Home</button>
+    </div>
+
+    <audio id="background-music" autoplay loop>
+        <source src="Pokemontheme.mp3" type="audio/mp3">
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
